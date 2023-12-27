@@ -5,7 +5,9 @@
 ### 작업내용
 
 - [x] 캐릭터정보
+- [x] 장비정보
+- [x] 새로고침시 상태값 유지
 
 ### 기술스택
 
-React, TypeScript, axios, styled-components, redux-toolkit
+React, TypeScript, axios, styled-components, redux-toolkit, redux-persist

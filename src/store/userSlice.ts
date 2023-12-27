@@ -46,7 +46,7 @@ export const userInfo = createAsyncThunk('user/getUserInfo', async (ocid: string
   }
 });
 
-export const userSlice = createSlice({
+const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {},
