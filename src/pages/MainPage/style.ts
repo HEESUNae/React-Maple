@@ -9,4 +9,7 @@ export const StyledMainPage = styled.div`
       gap: 0.5rem;
     }
   }
+  .character-container {
+    margin-bottom: 3rem;
+  }
 `;
