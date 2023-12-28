@@ -32,12 +32,19 @@ const MainPage = () => {
       .then((action) => {
         if (fetchUuid.fulfilled.match(action)) {
           const uuid = action.payload;
-          dispath(userInfo(uuid));
-          dispath(fetchEquipment(uuid));
-          navigate('/character');
+          dispath(userInfo(uuid)).then((action) => {
+            if (userInfo.fulfilled.match(action)) {
+              dispath(fetchEquipment(uuid));
+              const user = action.payload;
+              if (user.character_name !== null) {
+                navigate('/character');
+              }
+            }
+          });
         }
       })
       .catch((err) => {
+        window.location.pathname = '/';
         throw err;
       });
   };

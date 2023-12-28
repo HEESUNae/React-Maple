@@ -30,12 +30,10 @@ export const userInfo = createAsyncThunk('user/getUserInfo', async (ocid: string
     const res = await axiosApi.get(`/maplestory/v1/character/basic?ocid=${ocid}&date=2023-12-21`);
     if (res.data.character_name === null) {
       alert('캐릭터 정보가 없습니다.');
-      window.location.pathname = '/';
     }
     return res.data;
   } catch (err) {
     alert('캐릭터 정보가 없습니다.');
-    window.location.pathname = '/';
     throw err;
   }
 });
