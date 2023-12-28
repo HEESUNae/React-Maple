@@ -24,24 +24,18 @@ export const fetchUuid = createAsyncThunk('user/userUuid', async (nickname: stri
   }
 });
 
-// 현재 날짜
-export const nowDate = async () => {
-  const year = new Date().getFullYear();
-  const month = new Date().getMonth() + 1;
-  const date = 21;
-  return `${year}-${month}-${date}`;
-};
-
 // 유저 정보
 export const userInfo = createAsyncThunk('user/getUserInfo', async (ocid: string) => {
   try {
-    const res = await axiosApi.get(`/maplestory/v1/character/basic?ocid=${ocid}&date=${await nowDate()}`);
+    const res = await axiosApi.get(`/maplestory/v1/character/basic?ocid=${ocid}&date=2023-12-21`);
     if (res.data.character_name === null) {
       alert('캐릭터 정보가 없습니다.');
+      window.location.pathname = '/';
     }
     return res.data;
   } catch (err) {
     alert('캐릭터 정보가 없습니다.');
+    window.location.pathname = '/';
     throw err;
   }
 });

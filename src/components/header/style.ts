@@ -6,4 +6,8 @@ export const StyledHeader = styled.header`
   color: #fff;
   font-size: 1.8rem;
   font-weight: 600;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
 `;

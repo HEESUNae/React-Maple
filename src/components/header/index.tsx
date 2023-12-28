@@ -4,7 +4,7 @@ import { StyledHeader } from './style';
 const Header = () => {
   return (
     <StyledHeader>
-      <p>Maple Story</p>
+      <a href="/">Maple Story</a>
     </StyledHeader>
   );
 };
