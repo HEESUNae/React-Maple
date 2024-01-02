@@ -9,13 +9,13 @@ const initialState = {
 // 현재 날짜
 export const nowDate = () => {
   const year = new Date().getFullYear();
-  const month = new Date().getMonth() + 1;
-  const date = new Date().getDate();
+  const month = String(new Date().getMonth() + 1).padStart(2, '0');
+  const date = String(new Date().getDate()).padStart(2, '0');
   return `${year}-${month}-${date}`;
 };
 
 // 무릉도장 랭킹
-export const fetchDojang = createAsyncThunk('rank/dojang', async (_, { dispatch }) => {
+export const fetchDojang = createAsyncThunk('rank/dojang', async () => {
   try {
     const res = await axiosApi.get(`/maplestory/v1/ranking/dojang?date=${nowDate()}&difficulty=0&page=1`);
     let topTenArr = res.data.ranking.slice(0, 30);
