@@ -29,7 +29,7 @@ export const fetchDojang = createAsyncThunk('rank/dojang', async () => {
 export const fetchTotalRank = createAsyncThunk('rank/totalRank', async () => {
   try {
     const res = await axiosApi.get(`/maplestory/v1/ranking/overall?date=${nowDate()}&page=1`);
-    let totalRank = res.data.ranking.slice(0, 8);
+    let totalRank = res.data.ranking.slice(0, 10);
     return totalRank;
   } catch (err) {
     throw err;

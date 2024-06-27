@@ -27,27 +27,23 @@ export const StyledMainPage = styled.div`
     overflow: hidden;
     font-size: 1.5rem;
     ul {
-      border: 1px solid #eee;
       display: grid;
       margin: 2rem 0;
       grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+      gap: 2rem;
       li {
         display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 1.6rem;
-        width: 30rem;
+        flex-direction: column;
+        border: 0.1rem solid antiquewhite;
 
         .rank {
-          width: 4rem;
-          height: 4rem;
-          background: antiquewhite;
-          border: 0.1rem solid orange;
-          color: chocolate;
-          border-radius: 50%;
+          height: 3rem;
           display: flex;
           align-items: center;
-          justify-content: center;
+          text-align: center;
+          background: antiquewhite;
+          color: chocolate;
+          display: grid;
           font-weight: 600;
         }
         table {
@@ -66,10 +62,10 @@ export const StyledMainPage = styled.div`
       }
     }
     ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 2rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
       li {
         gap: 1rem;
         flex: 1;
@@ -77,9 +73,8 @@ export const StyledMainPage = styled.div`
         justify-content: space-between;
         padding: 1.6rem;
         border-radius: 0.4rem;
-        color: #fff;
         font-weight: 600;
-        background: linear-gradient(-180deg, #ffbc00, #ff9200);
+        border: 0.1rem solid;
       }
     }
   }
